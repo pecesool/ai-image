@@ -56,7 +56,7 @@ class TrainingLogger(tf.keras.callbacks.Callback):
     def on_epoch_end(self, epoch, logs=None):
         print(f"Epoch {epoch+1}: loss={logs['loss']:.4f}, accuracy={logs['accuracy']:.4f}, val_loss={logs['val_loss']:.4f}, val_accuracy={logs['val_accuracy']:.4f}")
 
-history = model.fit(x_train, y_train, epochs=1, validation_data=(x_test, y_test), callbacks=[TrainingLogger()])
+history = model.fit(x_train, y_train, epochs=10, validation_data=(x_test, y_test), callbacks=[TrainingLogger()])
 
 # 4. Predictions
 print("Making predictions...")
